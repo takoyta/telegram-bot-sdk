@@ -346,6 +346,34 @@ trait Message
         return new MessageObject($response->getDecodedBody());
     }
 
+
+    /**
+     * Send a group of photos, audio, documents or videos as an album.
+     *
+     * <code>
+     * $params = [
+     *       'chat_id'                       => '',  // int|string    - Required. Unique identifier for the target chat or username of the target channel (in the format "@channelusername")
+     *       'media'                         => [],  // array         - Required. A JSON-serialized array describing messages to be sent, must include 2-10 items. Array of InputMediaAudio, InputMediaDocument, InputMediaPhoto and InputMediaVideo
+     *       'disable_notification'          => '',  // bool          - (Optional). Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound.
+     *       'protect_content'               => '',  // bool          - (Optional). Protects the contents of the sent messages from forwarding and saving
+     *       'reply_to_message_id'           => '',  // int           - (Optional). If the message is a reply, ID of the original message
+     *       'allow_sending_without_reply    => '',  // bool          - (Optional). Pass True, if the message should be sent even if the specified replied-to message is not found
+     *       ''star_count'                   => '',  // int           - (Required). Stars amount
+     * ]
+     * </code>
+     *
+     * @link https://core.telegram.org/bots/api#sendmediagroup
+     *
+     * @throws TelegramSDKException
+     *                              //TODO Check this return type.
+     */
+    public function sendPaidMedia(array $params): MessageObject
+    {
+        $response = $this->uploadFile('sendPaidMedia', $params, 'media');
+
+        return new MessageObject($response->getDecodedBody());
+    }
+
     /**
      * Send information about a venue.
      *

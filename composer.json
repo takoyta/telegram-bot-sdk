@@ -1,8 +1,9 @@
 {
-    "name": "irazasyed/telegram-bot-sdk",
-    "description": "The Unofficial Telegram Bot API PHP SDK",
+    "name": "takoyta/telegram-bot-sdk",
+    "description": "The Unofficial Telegram Bot API PHP SDK - fork",
     "license": "BSD-3-Clause",
     "type": "library",
+    "version": "3.14.1",
     "keywords": [
         "telegram",
         "telegram bot",
